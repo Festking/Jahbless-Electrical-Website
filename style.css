@@ -87,8 +87,15 @@ header {
     letter-spacing: 1.5px;
     transition: 0.25s ease-in-out;
 }
+
 #home-logo {
-width: 11dvh;
+width: 9dvh;
+}
+
+@media screen and (max-width:768px) {
+    #home-logo {
+        width: 11dvh;
+        }
 }
 
 .dropdown-button {
@@ -147,7 +154,7 @@ width: 11dvh;
 #item1 {
     margin-top: -10px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     animation: slideLeft1 10s infinite ease-in-out;
     animation-delay: 1s;
 }
@@ -155,9 +162,15 @@ width: 11dvh;
 #item2 {
     margin-top: -5px;
     padding-bottom: 5px;
-    font-size: 20px;
+    font-size: 15px;
     animation: slideLeft2 10s infinite ease-in-out;
     animation-delay: 1s;
+}
+
+@media screen and (max-width:768px) {
+    #item2 {
+        font-size: 20px;
+    }
 }
 
 .intro-btn-gather {
@@ -487,18 +500,18 @@ main {
 }
 
 .services-content h2 {
-    font-size: 54px;
+    font-size: 52px;
     text-align: center;
 }
 
 .services-content p {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #serv-txt {
     margin-top: -30px;
     text-align: center;
-    font-weight:600;
+    font-weight:500;
 }
 
 /*Team Section Design*/ 
@@ -962,22 +975,14 @@ select {
 /*whatsapp Icon*/
 
 .whatsapp_Icon {
-    z-index: 1;
-    position: sticky;
-    top: 65%;
-    bottom: 10%;
-    width: 10%;
+    position: fixed; /* Better for sticking the icon in a fixed position */
+    z-index: 1000; /* High z-index to make sure it stays on top */
+    top: 65%; /* Adjust based on where you want it vertically */
+    left: 20px; /* Close to the left side of the screen */
+    width: 50px; /* Adjust width for appropriate icon size */
+    transform: scale(2);
 }
 
-@media screen and (max-width:768px) {
-    .whatsapp_Icon {
-        z-index: 1;
-        position: sticky;
-        top: 45%;
-        bottom: 20%;
-        transform: scale(2);
-    }
-}
 
 /*Copyright Design*/
 
