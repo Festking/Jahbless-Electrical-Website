@@ -299,7 +299,7 @@
                 });
             </script>
         
-            <form class="form" method="post" action="Pages/contact.php">
+            <form class="form" method="post" action="https://formspree.io/f/xjkbjkby">
                 <div class="sub-form">
                     <div class="form_gather">
                         <input type="text" name="name" placeholder="Name" autocomplete="name" required>
@@ -321,6 +321,7 @@
     <div class="testimonial">
         <h2>Testimonials</h2>
         <div class="testimonial-slideshow">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
             <div class="testimony a1 fade">
                 <img alt="unable to load image" aria-label="testimonial number 1" src="Images/test1.JPG">
                 <h3>"Exceptional Service and Expertise"</h3>
@@ -338,42 +339,69 @@
                 <h3>"Reliable and Trustworthy Service Provider"</h3>
                 <p>JBE has been my go-to service provider for all electrical needs. Whether it's routine maintenance, installations, or troubleshooting, they always deliver exceptional results. They are reliable, trustworthy, and dedicated to customer satisfaction. I appreciate their attention to detail & proactive approach to ensuring the safety and efficiency of my electrical systems.</p>
             </div>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
         <div class="dot-container">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
-    </div>
+    </div>    
     
     <script>
         var slideIndex = 0;
-        showSlides();
-    
-        function showSlides() {
-            var slideIndex = 0;
-showSlides();
+        showSlidesAuto();
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("fade");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 15000); // Change slide every 15 seconds (5000 milliseconds)
-}
+        function showSlidesAuto() {
+            var i;
+            var slides = document.getElementsByClassName("fade");
+            var dots = document.getElementsByClassName("dot");
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block"; 
+            dots[slideIndex-1].className += " active";
+            
+            setTimeout(showSlidesAuto, 15000); // Change slide every 15 seconds
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("fade");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { slideIndex = 1 } 
+            if (n < 1) { slideIndex = slides.length }
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block"; 
+            dots[slideIndex-1].className += " active";
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides(slideIndex);
         }
     </script>
     <!--Whatsapp Icon-->

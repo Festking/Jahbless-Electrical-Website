@@ -22,43 +22,7 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const status = urlParams.get('status');
 
-            console.log('URL Status:', status); // Log the status to the console
-
-            if (status === 'success') {
-                alert('Email has been successfully submitted!');
-            } else if (status === 'error') {
-                alert('There was an error sending the email. Please try again.');
-            }
-        });
-
-
-        function handleSubmit(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            const formData = new FormData(event.target);
-            
-            fetch('https://script.google.com/macros/s/AKfycbyPNQU0oYqOV6q4Wkl9UHLYxf5couChiSSyOXWCiLjLEgroj8Zy-ca5GeswmWcV3on1/exec', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text()) // Convert response to text
-            .then(data => {
-                alert('Submission successful'); // Show success alert
-                document.getElementById('subscribe-message').textContent = 'Thank you for subscribing!';
-                event.target.reset(); // Reset the form
-            })
-            .catch(error => {
-                alert('Submission failed'); // Show error alert
-                console.error('Error:', error); // Log the error
-            });
-        }
-
-    </script>
 </head>
 <body>
     <header>
@@ -187,7 +151,7 @@
                 });
             </script>
         
-            <form class="form" method="post" action="contact.php">
+            <form class="form" method="post" action="https://formspree.io/f/xjkbjkby">
                 <div class="sub-form">
                     <div class="form_gather">
                         <input type="text" name="name" placeholder="Name" autocomplete="name" required>
