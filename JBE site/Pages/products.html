@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jahbless Electricals">
+    <meta name="keywords" content="electricals, installation, services">
+    <title>JBE-Services Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="additional.css">
+    <link rel="icon" href="../Images/fav-icon.png" type="image/png">
+
+    <style>
+        #dropdown-content a:nth-child(3) {
+            color: #1b2735;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div id="header-text">
+                <p>Your home of electrical services and quality sales</p>
+            </div>
+            <div class="sub-header">
+                <div class="sub-gather">
+                    <img src="../Images/tel1.png" id="call-icon" alt="Tel Icon">
+                    <p>+2348102738660</p>
+                </div>
+                <div class="sub-gather">
+                    <img src="../Images/email1.png" id="email-icon" alt="Email Icon">
+                    <p>jahblesselectricals@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="sub-container">
+                <a href="../index.html">
+                    <img src="../Images/main logo.png" alt="JBE Logo" id="home-logo">
+                </a>
+                <div class="dropdown">
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="../index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
+                        <div class="cart_count">
+                            <a href="cart.html">
+                                <img id="cart_icon" src="../Images/cart3.png" alt="Cart Icon">
+                            </a>
+                            <p class="counter">0</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="showDropdown()" class="dropdown-button">&#9776;</button>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropBtn = document.querySelector('.dropdown-button');
+                const dropCont = document.querySelector('.dropdown');
+
+                dropBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    dropCont.classList.toggle('show');
+                });
+
+                window.addEventListener('click', function(event) {
+                    if (!event.target.closest('.dropdown')) {
+                        dropCont.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+    </header>
+
+    <div class="loader_bg">
+        <div class="loader">
+            <img src="../Images/background-site.jpg" alt="Background Image">
+        </div>
+    </div>
+
+    <div class="holder1_bg">
+        <div class="holder">
+            <h2>
+                <span id="our_pdt_style">Our </span>
+                <span id="only_pdt_color">Products</span>
+            </h2>
+            <p>We source our products from reputable manufacturers known for their commitment to excellence and reliability. Rest assured, each item in our collection undergoes rigorous quality control measures to ensure peak performance and durability.</p>
+            <div class="pdt-group-align">
+                <div class="pdt-sect">
+                    <div class="pdt a1">
+                        <div class="img-fig">
+                            <img src="../Images/light1.jpg" alt="Chandelier">
+                        </div>
+                        <p>Varieties of Lights (Chandeliers)</p>
+                        <p>Elevate your space with our exquisite chandeliers.</p>
+                        <p>Price: $10</p>
+                    </div>
+                    <div class="pdt a2">
+                        <div class="img-fig">
+                            <img src="../Images/cctv.png" alt="CCTV">
+                        </div>
+                        <p>Explore Our CCTV Range</p>
+                        <p>Cutting-edge CCTV systems for advanced surveillance.</p>
+                        <p>Price: $10</p>
+                    </div>
+                    <div class="pdt a3">
+                        <div class="img-fig">
+                            <img src="../Images/ceiling fan.png" alt="Ceiling Fan">
+                        </div>
+                        <p>Our Range of Electric Fans</p>
+                        <p>From rechargeable portability to ceiling comfort, discover our diverse fan collection.</p>
+                        <p>Price: $10</p>
+                    </div>
+                </div>
+
+                <div class="pdt-sect2">
+                    <div class="addCart a1">
+                        <button type="button" class="cart-button">Add to cart</button>
+                        <div class="sub-cart">
+                            <label for="quantity1">Qty:</label>
+                            <input type="number" value="1" min="1" id="quantity1" name="quantity1" class="quantity-input">
+                        </div>
+                    </div>
+                    <div class="addCart a2">
+                        <button type="button" class="cart-button">Add to cart</button>
+                        <div class="sub-cart">
+                            <label for="quantity2">Qty:</label>
+                            <input type="number" value="1" min="1" id="quantity2" name="quantity2" class="quantity-input">
+                        </div>
+                    </div>
+                    <div class="addCart a3">
+                        <button type="button" class="cart-button">Add to cart</button>
+                        <div class="sub-cart">
+                            <label for="quantity3">Qty:</label>
+                            <input type="number" value="1" min="1" id="quantity3" name="quantity3" class="quantity-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cartCount = 0;
+            const cartQuantities = {};
+
+            const cartButtons = document.querySelectorAll('.cart-button');
+            const cartCounter = document.querySelector('.counter');
+
+            cartButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    const quantityInput = document.getElementById(`quantity${index + 1}`);
+                    const newQuantity = parseInt(quantityInput.value);
+
+                    if (newQuantity > 0) {
+                        const previousQuantity = cartQuantities[index + 1] || 0;
+                        cartQuantities[index + 1] = newQuantity;
+
+                        cartCount += newQuantity - previousQuantity;
+                        cartCounter.textContent = cartCount;
+
+                        localStorage.setItem('cartData', JSON.stringify(cartQuantities));
+
+                        console.log('Cart data stored:', cartQuantities);
+                    } else {
+                        alert('Please enter a valid quantity');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="sub-footer">
+            <div class="foot item1">
+                <h3>About JBE</h3>
+                <p>JBE is a reputable company offering expert electrical services, including repairs, maintenance, installations, and troubleshooting. Known for their prompt response to emergencies and commitment to quality workmanship, and is trusted by clients for all their electrical needs.</p>
+            </div>
+            <div class="sub_sub">
+                <div class="foot item2">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="foot item3">
+                    <h3>Contact Us</h3>
+                    <span>
+                        <img src="../Images/location.jpg" aria-label="Location: Umudioka, Awka" alt="Location Icon">
+                        <label>Awka, Anambra State, Nigeria</label>
+                    </span>
+                    <span>
+                        <img src="../Images/tel.png" aria-label="Phone: +23469859746" alt="Phone Icon">
+                        <label>+2348102738660</label>
+                    </span>
+                    <span>
+                        <img src="../Images/email.png" aria-label="Email: @gmail.com" alt="Email Icon">
+                        <label>jahblesselectricals@gmail.com</label>
+                    </span>
+                </div>
+            </div>
+            <div class="foot item4">
+                <h3>Subscribe Now</h3>
+                <input type="email" placeholder="Enter your email">
+                <button id="sub-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <cite>© 2024 Jahbless Electrical. All Rights Reserved.</cite>
+    </div>
+</body>
+
+</html>

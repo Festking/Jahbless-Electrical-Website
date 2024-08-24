@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jahbless Electricals offers expert electrical services including installation, repair, and maintenance. Contact us for reliable and quality electrical solutions.">
+    <meta name="keywords" content="electricals,installation,services">
+    <title>JBE-Services Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="additional.css">
+    <link rel="icon" href="../Images/fav-icon.png" type="image/png">
+
+    <style>
+        #dropdown-content a:nth-child(4) {
+            color: #1b2735;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+
+            console.log('URL Status:', status); // Log the status to the console
+
+            if (status === 'success') {
+                alert('Email has been successfully submitted!');
+            } else if (status === 'error') {
+                alert('There was an error sending the email. Please try again.');
+            }
+        });
+
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const formData = new FormData(event.target);
+            
+            fetch('https://script.google.com/macros/s/AKfycbyPNQU0oYqOV6q4Wkl9UHLYxf5couChiSSyOXWCiLjLEgroj8Zy-ca5GeswmWcV3on1/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) // Convert response to text
+            .then(data => {
+                alert('Submission successful'); // Show success alert
+                document.getElementById('subscribe-message').textContent = 'Thank you for subscribing!';
+                event.target.reset(); // Reset the form
+            })
+            .catch(error => {
+                alert('Submission failed'); // Show error alert
+                console.error('Error:', error); // Log the error
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div id="header-text"><p>Your home of electrical services and quality sales</p></div>
+            <div class="sub-header">
+                <div class="sub-gather">
+                    <img src="../Images/tel1.png" id="call-icon" alt="Tel Icon">
+                    <p>+2348102738660</p>
+                </div>
+                <div class="sub-gather">
+                    <img src="../Images/email1.png" id="email-icon" alt="Email Icon">
+                    <p>jahblesselectricals@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <!--Dropdown Section-->
+        <div class="container">
+            <div class="sub-container">
+                <a href="../index.html" ><img src="../Images/main logo.png" alt="JBE Logo" id="home-logo"></a>
+                <div class="dropdown">
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="../index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <button onclick="showDropdown()" class="dropdown-button">&#9776</button>
+            </div>
+        </div>
+        <!--Script to handle dropdown-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropBtn = document.querySelector('.dropdown-button');
+                const dropCont = document.querySelector('.dropdown');
+
+                dropBtn.addEventListener('click', function(event) {
+                    // Prevent the click event from bubbling up to the window
+                    event.stopPropagation();
+
+                    dropCont.classList.toggle('show');
+                });
+
+                // Close dropdown if user clicks outside of it
+                window.addEventListener('click', function(event) {
+                    // Check if the clicked element is not the dropdown button or its content
+                    if (!event.target.closest('.dropdown')) {
+                        dropCont.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+         
+    </header>
+
+    <!--Background Image-->
+    <div class="loader_bg" role="presentation">
+        <div class="loader"><img src="../Images/background-site.jpg" alt="Background Image"></div>
+    </div>
+
+    <!--FAQ and Contact Page-->
+    <div class="faq-n-cont">
+        <h2><span id="contact-us-style">Contact</span> Us</h2>
+        <div class="sub-faq-n-cont">
+            <div class="faq">
+                <div class="sub-faq">
+                    <div class="question" data-aria="1">
+                        <div class="ques">
+                            <label class="main-ques">What types of electrical services do you offer?</label>
+                            <button class="btn">+</button>
+                        </div>
+                        <p class="answer">At Jahbless Electricals, we provide a wide range of services including electrical installation, repair, maintenance, consultation, emergency services, and energy efficiency solutions for both residential and commercial properties.</p>
+                    </div>
+                    <div class="question" data-aria="2">
+                        <div class="ques">
+                            <label class="main-ques">Do you offer emergency services?</label>
+                            <button class="btn">+</button>
+                        </div>
+                        <p class="answer">Absolutely! We understand that electrical emergencies can occur at any time. That's why we provide 24/7 emergency services to address urgent issues and ensure the safety of our clients' properties.</p>
+                    </div>
+                    <div class="question" data-aria="3">
+                        <div class="ques">
+                            <label class="main-ques">Are your electricians qualified and certified?</label>
+                            <button class="btn">+</button>
+                        </div>
+                        <p class="answer">Yes, all our electricians are highly trained, certified professionals with extensive experience in the field. They undergo regular training to stay updated on the latest industry standards and best practices.</p>
+                    </div>
+                    <div class="question" data-aria="4">
+                        <div class="ques">
+                            <label class="main-ques">How do I schedule an appointment for electrical services?</label>
+                            <button class="btn">+</button>
+                        </div>
+                        <p class="answer">Scheduling an appointment with us is easy. Simply give us a call at +234454363685 or email us at shjeud@gmail.com to discuss your requirements and set up a convenient time for our team to visit your property.</p>
+                    </div>
+                    <div class="question" data-aria="5">
+                        <div class="ques">
+                            <label class="main-ques">How soon can you respond to a service request?</label>
+                            <button class="btn">+</button>
+                        </div>
+                        <p class="answer">We strive to provide prompt and efficient service to all our clients. Depending on the nature of your request and our current workload, we aim to respond to service requests within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const questions = document.querySelectorAll('.question');
+            
+                    questions.forEach(question => {
+                        question.addEventListener('click', function() {
+                            const answer = this.querySelector('.answer');
+                            const button = this.querySelector('.btn');
+            
+                            answer.classList.toggle('show');
+            
+                            // Toggle button text between + and -
+                            if (button.textContent === '+') {
+                                button.textContent = '-';
+                            } else {
+                                button.textContent = '+';
+                            }
+                        });
+                    });
+                });
+            </script>
+        
+            <form class="form" method="post" action="contact.php">
+                <div class="sub-form">
+                    <div class="form_gather">
+                        <input type="text" name="name" placeholder="Name" autocomplete="name" required>
+                        <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                    </div>
+                    <select name="subject" aria-label="Select Subject" required>
+                        <option id="opt1" disabled selected>Select Subject</option>
+                        <option value="Make Payment">Make Payment</option>
+                        <option value="Direct Contact">Direct Contact</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <textarea name="message" rows="10" cols="50" placeholder="Message" required></textarea>
+                    <button name="submit-btn" type="submit" id="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Footer Section-->
+    
+    <div class="footer">
+        <div class="sub-footer">
+            <div class="foot item1">
+                <h3>About JBE</h3>
+                <p>JBE is a reputable company offering expert electrical services, including repairs, maintenance, installations, and troubleshooting. Known for their prompt response to emergencies and commitment to quality workmanship 
+                    and is trusted by clients for all their electrical needs.</p>
+            </div>
+            <div class="sub_sub">
+                <div class="foot item2">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contacts</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="foot item3">
+                    <h3>Contact Us</h3>
+                    <span>
+                        <img src="../Images/location.jpg" aria-label="Location: Umudioka, Awka">
+                        <label>Awka, Anambra State, Nigeria</label>
+                    </span>
+                    <span>
+                        <img src="../Images/tel.png" aria-label="Phone: +23469859746">
+                        <label>+2348102738660</label>
+                    </span>
+                    <span>
+                        <img src="../Images/email.png" aria-label="Email: @gmail.com">
+                        <label>jahblesselectricals@gmail.com</label>
+                    </span>
+                    
+                </div>
+            </div>
+            <div class="foot item4">
+                <h3>Subscribe Now</h3>
+                <form id="subscribe-form" onsubmit="handleSubmit(event)">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" id="sub-btn">SUBSCRIBE</button>
+                </form>
+                <p id="subscribe-message"></p>
+            </div>              
+        </div>
+    </div>
+
+    <!--Copyright-->
+    <div class="copyright">
+        <cite>© 2024 Jahbless Electrical. All Rights Reserved.</cite>
+    </div>
+</body>
+</html>

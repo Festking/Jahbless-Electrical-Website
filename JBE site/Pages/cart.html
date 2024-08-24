@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jahbless Electricals">
+    <meta name="keywords" content="electricals, installation, services">
+    <title>JBE-Services Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="additional.css">
+    <link rel="icon" href="../Images/fav-icon.png" type="image/png">
+
+    <style>
+        #dropdown-content a:nth-child(3) {
+            color: #1b2735;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div id="header-text">
+                <p>Your home of electrical services and quality sales</p>
+            </div>
+            <div class="sub-header">
+                <div class="sub-gather">
+                    <img src="../Images/tel1.png" id="call-icon" alt="Tel Icon">
+                    <p>+2348102738660</p>
+                </div>
+                <div class="sub-gather">
+                    <img src="../Images/email1.png" id="email-icon" alt="Email Icon">
+                    <p>jahblesselectricals@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="sub-container">
+                <a href="../index.html">
+                    <img src="../Images/main logo.png" alt="JBE Logo" id="home-logo">
+                </a>
+                <div class="dropdown">
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="../index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
+                        <div class="cart_count">
+                            <a href="#">
+                                <img alt="Cart icon" id="cart_icon" src="../Images/cart3.png">
+                            </a>
+                            <p class="counter">0</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="showDropdown()" class="dropdown-button">&#9776;</button>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropBtn = document.querySelector('.dropdown-button');
+                const dropCont = document.querySelector('.dropdown');
+
+                dropBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    dropCont.classList.toggle('show');
+                });
+
+                window.addEventListener('click', function(event) {
+                    if (!event.target.closest('.dropdown')) {
+                        dropCont.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+    </header>
+
+    <div class="loader_bg">
+        <div class="loader">
+            <img src="../Images/background-site.jpg" alt="Background Image">
+        </div>
+    </div>
+    
+    <div class="editC">
+        <h1>EDIT CART</h1>
+    </div>
+    
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be dynamically populated here -->
+            </tbody>
+        </table>
+        <div id="cart-summary">
+            <div class="sum_g1">
+                <p><strong>Subtotal:</strong> <span id="subtotal">$0.00</span></p>
+                <p><strong>Tax (10%):</strong> <span id="tax">$0.00</span></p>
+                <p><strong>Total:</strong> <span id="total">$0.00</span></p>
+            </div>
+            <div class="sum_g2">
+                <button id="update-cart">Update Cart</button>
+                <button id="confirm-purchase">Confirm Purchase</button>
+            </div>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+
+    <footer>
+        <div class="footer">
+            <div class="sub-footer">
+                <div class="foot item1">
+                    <h3>About JBE</h3>
+                    <p>JBE is a reputable company offering expert electrical services, including repairs, maintenance, installations, and troubleshooting. Known for their prompt response to emergencies and commitment to quality workmanship, and is trusted by clients for all their electrical needs.</p>
+                </div>
+                <div class="sub_sub">
+                    <div class="foot item2">
+                        <h3>Quick Links</h3>
+                        <a href="../index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
+                    </div>
+                    <div class="foot item3">
+                        <h3>Contact Us</h3>
+                        <span>
+                            <img src="../Images/location.jpg" aria-label="Location: Umudioka, Awka" alt="Location icon">
+                            <label>Awka, Anambra State, Nigeria</label>
+                        </span>
+                        <span>
+                            <img src="../Images/tel.png" aria-label="Phone: +23469859746" alt="Phone icon">
+                            <label>+23469859746</label>
+                        </span>
+                        <span>
+                            <img src="../Images/email.png" aria-label="Email: @gmail.com" alt="Email icon">
+                            <label>jahblesselectricals@gmail.com</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="foot item4">
+                    <h3>Subscribe Now</h3>
+                    <input type="email" placeholder="Enter your email">
+                    <button id="sub-btn">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <cite>© 2024 Jahbless Electrical. All Rights Reserved.</cite>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample product data (replace this with your actual product data)
+            const products = {
+                1: { name: 'Chandeliers', price: 10 },
+                2: { name: 'CCTV Systems', price: 10 },
+                3: { name: 'Ceiling Fans', price: 10 }
+            };
+
+            const cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+            const cartItemsDiv = document.getElementById('cart-items');
+            const subtotalSpan = document.getElementById('subtotal');
+            const taxSpan = document.getElementById('tax');
+            const totalSpan = document.getElementById('total');
+            const updateCartButton = document.getElementById('update-cart');
+            const confirmPurchaseButton = document.getElementById('confirm-purchase');
+
+            // Function to update the cart items display and totals
+            function updateCartDisplay() {
+                let subtotal = 0;
+                cartItemsDiv.innerHTML = ''; // Clear the cart items display
+
+                // Loop through each item in the cart data
+                Object.keys(cartData).forEach(productId => {
+                    const quantity = cartData[productId];
+                    const product = products[productId];
+                    if (product) {
+                        const total = product.price * quantity;
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.name}</td>
+                            <td>$${product.price.toFixed(2)}</td>
+                            <td><input type="number" min="1" value="${quantity}" data-product-id="${productId}" class="quantity-input"></td>
+                            <td>$${total.toFixed(2)}</td>
+                            <td><button class="remove-item" data-product-id="${productId}">Remove</button></td>
+                        `;
+                        cartItemsDiv.appendChild(row);
+
+                        subtotal += total;
+                    }
+                });
+
+                const tax = subtotal * 0.1; // Assuming 10% tax
+                const total = subtotal + tax;
+
+                subtotalSpan.textContent = `$${subtotal.toFixed(2)}`;
+                taxSpan.textContent = `$${tax.toFixed(2)}`;
+                totalSpan.textContent = `$${total.toFixed(2)}`;
+            }
+
+            // Initial update of cart display
+            updateCartDisplay();
+
+            // Event listener for remove buttons
+            cartItemsDiv.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-item')) {
+                    const productId = event.target.getAttribute('data-product-id');
+                    delete cartData[productId];
+                    localStorage.setItem('cartData', JSON.stringify(cartData));
+                    updateCartDisplay(); // Update the cart display after removing the item
+                }
+            });
+
+            // Event listener for quantity input changes
+            cartItemsDiv.addEventListener('change', function(event) {
+                if (event.target.classList.contains('quantity-input')) {
+                    const productId = event.target.getAttribute('data-product-id');
+                    const newQuantity = parseInt(event.target.value);
+                    if (newQuantity > 0) {
+                        cartData[productId] = newQuantity;
+                        localStorage.setItem('cartData', JSON.stringify(cartData));
+                        updateCartDisplay(); // Update the cart display after changing the quantity
+                    }
+                }
+            });
+
+            // Event listener for update cart button
+            updateCartButton.addEventListener('click', function() {
+                updateCartDisplay(); // Simply refresh the cart display
+            });
+
+            // Event listener for confirm purchase button
+            confirmPurchaseButton.addEventListener('click', function() {
+                let message = "Order Details:\n";
+                Object.keys(cartData).forEach(productId => {
+                    const quantity = cartData[productId];
+                    const product = products[productId];
+                    if (product) {
+                        message += `${product.name}: Quantity: ${quantity} - Price: $${product.price * quantity}\n`;
+                    }
+                });
+                message += `Subtotal: ${subtotalSpan.textContent}\n`;
+                message += `Tax: ${taxSpan.textContent}\n`;
+                message += `Total: ${totalSpan.textContent}`;
+
+                const encodedMessage = encodeURIComponent(message);
+                const phoneNumber = '+2348102738660'; // Replace with your WhatsApp number
+                const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Open the URL in a new tab
+                window.open(url, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

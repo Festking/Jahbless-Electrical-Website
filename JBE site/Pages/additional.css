@@ -1,0 +1,278 @@
+/*Service Additional Design*/
+
+.abt-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .abt-contact p {
+        font-size: 18px;
+        font-style: italic;
+    }
+    
+    .abt-contact a {
+        font-size: 20px;
+        background-color: #EF6F24;
+        padding: 0 10px;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .abt-contact p {
+        font-size: 14px;
+        font-style: italic;
+    }
+    
+    .abt-contact a {
+        font-size: 18px;
+        background-color: #EF6F24;
+        padding: 5px 10px;
+        color: #fff;
+    }
+}
+
+/* Products Additional Styling*/
+.pdt-group-align {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.pdt-sect2 {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:768px) {
+    .pdt-sect2 {
+        margin-top: 30px;
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+}
+
+.addCart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sub-cart {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: center;
+}
+
+.cart-button {
+    background-color: #031b37;
+    opacity: 0.9;
+    color: #fff;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sub-cart input {
+    width: 18%;
+    padding: 5px;
+    min-height: 0;
+    height: auto;
+    border-radius: 5px;
+}
+
+.sub-cart label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#cart_icon {
+    width: 25px;
+    min-height: 0;
+    height: auto;
+    color: #EF6F24;
+}
+
+.cart_count {
+    display: flex;
+}
+
+.cart_count :nth-child(2) {
+    margin-top: -10px;
+    margin-left: 2px;
+    font-weight: bold;
+}
+
+.counter {
+    color: #031b37;
+}
+
+@media screen and (max-width:768px) {
+    .counter {
+        color: #fff;
+    }
+}
+
+.editC {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+table, #cart-summary {
+    padding: 5px 20px;
+}
+
+#quote_style {
+    color: #0a1950; 
+    font-weight: bold;
+}
+
+/*Cart Table Design*/
+
+table {
+    width: 100%;
+    font-size: 16px;
+    border-collapse: collapse; /* Optional: Makes borders collapse into a single border */
+}
+
+th, td {
+    border: 2px solid #fff; /* Updated to keep the border consistent */
+    background-color: #e8a781;
+    padding: 15px;
+}
+
+th {
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+}
+
+.sum_g2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sum_g2 button {
+    height: 35%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0a1950;
+    color: #fff;
+}
+
+.sum_g2 button:hover {
+    opacity: 0.85;
+}
+
+.sum_g2 button:nth-child(2) {
+    background-color: green;
+}
+
+.remove-item {
+    padding: 8px;
+    border: none;
+    background-color: red;
+    color: #fff;
+}
+
+.remove-item:hover {
+    opacity: 0.6;
+}
+
+#cart-summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+/* Cart Edit Design For Smaller Screens */
+@media only screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+        width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    th, td {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 14px;
+    }
+
+    .quantity-input {
+        width: 50%;
+    }
+}
+
+/* Additional Media Query for Even Smaller Screens */
+@media only screen and (max-width: 480px) {
+    table {
+        font-size: 12px;
+        width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    table tbody thead tr {
+        display: block; /* Stack table rows vertically */
+    }
+
+    th {
+        font-size: 12px; /* Reduce font size for table headers */
+    }
+
+    td {
+        font-size: 12px; /* Reduce font size for table data */
+    }
+
+    .sum_g2 button {
+        padding: 6px; /* Reduce button padding */
+    }
+
+    .remove-item {
+        padding: 5px;
+    }
+
+    th, td {
+        border: none; /* Updated to keep the border consistent */
+        background-color: #e8a781;
+        padding: 10px;
+    }
+
+    .quantity-input {
+        width: 30%;
+    }
+}

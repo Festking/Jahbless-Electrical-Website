@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jahbless Electricals">
+    <meta name="keywords" content="electricals,installation,services">
+    <title>JBE-Services Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="additional.css">
+    <link rel="icon" href="../Images/fav-icon.png" type="image/png">
+
+    <style>
+        #dropdown-content a:nth-child(5) {
+            color: #1b2735;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div id="header-text"><p>Your home of electrical services and quality sales</p></div>
+            <div class="sub-header">
+                <div class="sub-gather">
+                    <img src="../Images/tel1.png" id="call-icon" alt="Tel Icon">
+                    <p>+2348102738660</p>
+                </div>
+                <div class="sub-gather">
+                    <img src="../Images/email1.png" id="email-icon" alt="Email Icon">
+                    <p>jahblesselectricals@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <!--Dropdown Section-->
+        <div class="container">
+            <div class="sub-container">
+                <a href="../index.html" ><img src="../Images/main logo.png" alt="JBE Logo" id="home-logo"></a>
+                <div class="dropdown">
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="../index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <button onclick="showDropdown()" class="dropdown-button">&#9776</button>
+            </div>
+        </div>
+        <!--Script to handle dropdown-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropBtn = document.querySelector('.dropdown-button');
+                const dropCont = document.querySelector('.dropdown');
+
+                dropBtn.addEventListener('click', function(event) {
+                    // Prevent the click event from bubbling up to the window
+                    event.stopPropagation();
+
+                    dropCont.classList.toggle('show');
+                });
+
+                // Close dropdown if user clicks outside of it
+                window.addEventListener('click', function(event) {
+                    // Check if the clicked element is not the dropdown button or its content
+                    if (!event.target.closest('.dropdown')) {
+                        dropCont.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+         
+    </header>
+
+    <!--Background Image-->
+    <div class="loader_bg">
+        <div class="loader"><img src="../Images/background-site.jpg" alt="Background Image"></div>
+    </div>
+
+    <!--Main About Section-->
+    <main>
+        <div class="sub-main">
+            <div class="main-content">
+                <h2>About <span id="about_us_color">Us</span></h2>
+                <p>We're a company of experts in the electrical field. Our team has years of experience working with all kinds of electrical equipment, 
+                from home appliances to commercial systems. Whether you're looking for new electrical gadgets, need help with installation, or have a 
+                question about a problem you're experiencing, we're here to help. Let us put our expertise to work for you!.</p>
+            </div>
+            <img src="../Images/electrician1 sqr.jpg" id="consult" alt="Unable to load image">
+        </div>
+    </main>
+    
+    <!--Footer Section-->
+    
+    <div class="footer">
+        <div class="sub-footer">
+            <div class="foot item1">
+                <h3>About JBE</h3>
+                <p>JBE is a reputable company offering expert electrical services, including repairs, maintenance, installations, and troubleshooting. Known for their prompt response to emergencies and commitment to quality workmanship 
+                    and is trusted by clients for all their electrical needs.</p>
+            </div>
+            <div class="sub_sub">
+                <div class="foot item2">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contacts</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="foot item3">
+                    <h3>Contact Us</h3>
+                    <span><img aria-label="Location: Umudioka, Awka" src="../Images/location.jpg"><label>Awka, Anambra State, Nigeria</label></span>
+                    <span><img aria-label="Phone: +2348102738660" src="../Images/tel.png"><label>+2348102738660</label></span>
+                    <span><img aria-label="Email: @gmail.com" src="../Images/email.png"><label>jahblesselectricals@gmail.com</label></span>
+                </div>
+            </div>
+            <div class="foot item4">
+                <h3>Subscribe Now</h3>
+                <input type="email" placeholder="Enter your email">
+                <button id="sub-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Copyright-->
+    <div class="copyright">
+        <cite>© 2024 Jahbless Electrical. All Rights Reserved.</cite>
+    </div>
+</body>
+</html>

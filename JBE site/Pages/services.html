@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jahbless Electricals">
+    <meta name="keywords" content="electricals,installation,services">
+    <title>JBE-Services Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="additional.css">
+    <link rel="icon" href="../Images/fav-icon.png" type="image/png">
+
+    <style>
+        #dropdown-content a:nth-child(2) {
+            color: #1b2735;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div id="header-text"><p>Your home of electrical services and quality sales</p></div>
+            <div class="sub-header">
+                <div class="sub-gather">
+                    <img src="../Images/tel1.png" id="call-icon" alt="Tel Icon">
+                    <p>+2348102738660</p>
+                </div>
+                <div class="sub-gather">
+                    <img src="../Images/email1.png" id="email-icon" alt="Email Icon">
+                    <p>jahblesselectricals@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <!--Dropdown Section-->
+        <div class="container">
+            <div class="sub-container">
+                <a href="../index.html" ><img src="../Images/main logo.png" alt="JBE Logo" id="home-logo"></a>
+                <div class="dropdown">
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="../index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <button onclick="showDropdown()" class="dropdown-button">&#9776</button>
+            </div>
+        </div>
+        <!--Script to handle dropdown-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropBtn = document.querySelector('.dropdown-button');
+                const dropCont = document.querySelector('.dropdown');
+
+                dropBtn.addEventListener('click', function(event) {
+                    // Prevent the click event from bubbling up to the window
+                    event.stopPropagation();
+
+                    dropCont.classList.toggle('show');
+                });
+
+                // Close dropdown if user clicks outside of it
+                window.addEventListener('click', function(event) {
+                    // Check if the clicked element is not the dropdown button or its content
+                    if (!event.target.closest('.dropdown')) {
+                        dropCont.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+         
+    </header>
+
+    <!--Background Image-->
+    <div class="loader_bg">
+        <div class="loader"><img src="../Images/background-site.jpg" alt="Background Image"></div>
+    </div>
+
+    <!--Services Section-->
+    <div class="services">
+        <div class="services-content">
+            <h2><span id="our_srv_color">Our </span><span id="srv_color">Services</span></h2>
+            <p id="serv-txt">At Jahbless Electricals, we offer a comprehensive range of services tailored to meet all your electrical needs. With our team of experienced professionals and commitment to excellence, 
+                we ensure that every project is completed to the highest standards of quality and safety. Whether you require installation, maintenance, or repair services, we've got you covered.</p>
+            <div class="main-service">
+                <div class="group-serv-img">
+                    <img src="../Images/site2.jpg" id="serv" alt="Unable to load image">
+                    <h3>Commercial and Residential Services</h3>
+                    <p>Whether you're a homeowner, business owner, or property manager, we provide comprehensive services for both residential and commercial properties.</p>
+                </div>
+                <div class="group-serv-img">
+                    <img src="../Images/consultant.jpg" id="serv" alt="Unable to load image">
+                    <h3>Consultation and Design</h3>
+                    <p>Need guidance on electrical system design or planning? Our consultants are here to help. 
+                        We'll work with you to create customized solutions that meet your specific requirements.</p>
+                </div>
+                <div class="group-serv-img">
+                    <img src="../Images/clip-Ac1.jpg" id="serv" alt="Unable to load image">
+                    <h3>Electrical Installation</h3>
+                    <p>Trust our experts to handle all your electrical installation needs, from wiring and lighting to appliance setup and more.</p>
+                </div>
+                <div class="group-serv-img">
+                    <img src="../Images/electrician2.jpg" id="serv" alt="Unable to load image">
+                    <h3>Repair and Maintenance</h3>
+                    <p>Keep your electrical systems running smoothly with our repair and maintenance services. We diagnose issues quickly and provide efficient solutions to ensure minimal downtime.</p>
+                </div>
+            </div>
+        </div>
+        <div class="abt-contact">
+            <p>Need a quote?, <span id="quote_style">reach out to us now</span></p>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <!--Footer Section-->
+    
+    <div class="footer">
+        <div class="sub-footer">
+            <div class="foot item1">
+                <h3>About JBE</h3>
+                <p>JBE is a reputable company offering expert electrical services, including repairs, maintenance, installations, and troubleshooting. Known for their prompt response to emergencies and commitment to quality workmanship 
+                    and is trusted by clients for all their electrical needs.</p>
+            </div>
+            <div class="sub_sub">
+                <div class="foot item2">
+                    <h3>Quick Links</h3>
+                    <a href="../index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contacts</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="foot item3">
+                    <h3>Contact Us</h3>
+                    <span>
+                        <img src="../Images/location.jpg" aria-label="Location: Umudioka, Awka">
+                        <label>Awka, Anambra State, Nigeria</label>
+                    </span>
+                    <span>
+                        <img src="../Images/tel.png" aria-label="Phone: +23469859746">
+                        <label>+2348102738660</label>
+                    </span>
+                    <span>
+                        <img src="../Images/email.png" aria-label="Email: @gmail.com">
+                        <label>jahblesselectricals@gmail.com</label>
+                    </span>
+                    
+                </div>
+            </div>
+            <div class="foot item4">
+                <h3>Subscribe Now</h3>
+                <input type="email" placeholder="Enter your email">
+                <button id="sub-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Copyright-->
+    <div class="copyright">
+        <cite>© 2024 Jahbless Electrical. All Rights Reserved.</cite>
+    </div>
+</body>
+</html>
