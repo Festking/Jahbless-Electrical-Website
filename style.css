@@ -980,7 +980,7 @@ select {
     top: 65%; /* Adjust based on where you want it vertically */
     left: 20px; /* Close to the left side of the screen */
     width: 50px; /* Adjust width for appropriate icon size */
-    transform: scale(2.5);
+    transform: scale(2.2);
 }
 
 @media screen and (max-width:768px) {
