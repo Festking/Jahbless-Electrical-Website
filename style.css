@@ -162,7 +162,7 @@ width: 9dvh;
 #item2 {
     margin-top: -5px;
     padding-bottom: 5px;
-    font-size: 15px;
+    font-size: 12px;
     animation: slideLeft2 10s infinite ease-in-out;
     animation-delay: 1s;
 }
@@ -500,12 +500,12 @@ main {
 }
 
 .services-content h2 {
-    font-size: 52px;
+    font-size: 50px;
     text-align: center;
 }
 
 .services-content p {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 #serv-txt {
@@ -571,12 +571,12 @@ main {
 }
 
 .sub_team_sect h2 {
-    font-size: 54px;
+    font-size: 50px;
     text-align: center;
 }
 
 .sub_team_sect p {
-    font-size: 20px;
+    font-size: 10px;
     text-align: center;
 }
 
